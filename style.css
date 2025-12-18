@@ -2,28 +2,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
   background: #0b141a;
 }
 
-/* App container */
+/* App wrapper */
 .wa-app {
   max-width: 480px;
   height: 100vh;
   margin: auto;
-  background: #e5ddd5;
   display: flex;
   flex-direction: column;
+  background: #e5ddd5;
 }
 
 /* Header */
 .wa-header {
   background: #075e54;
   color: #fff;
-  padding: 10px;
+  padding: 12px;
   display: flex;
   align-items: center;
 }
@@ -37,10 +37,11 @@ body {
   align-items: center;
   justify-content: center;
   margin-right: 10px;
+  font-size: 18px;
 }
 
 .title .name {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 16px;
 }
 
@@ -52,30 +53,33 @@ body {
 /* Chat area */
 .wa-chat {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
   overflow-y: auto;
-  background: url("https://i.imgur.com/7Qp7hQp.png");
+  background: linear-gradient(#0b141a, #0b141a);
 }
 
 /* Message bubbles */
 .message {
-  max-width: 75%;
-  padding: 8px 10px;
+  max-width: 80%;
+  padding: 9px 12px;
   margin: 6px 0;
   font-size: 14px;
   line-height: 1.4;
   border-radius: 8px;
   word-wrap: break-word;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 
+/* User message */
 .user {
   background: #dcf8c6;
   margin-left: auto;
   border-bottom-right-radius: 2px;
 }
 
+/* Bot message */
 .bot {
-  background: #fff;
+  background: #ffffff;
   margin-right: auto;
   border-bottom-left-radius: 2px;
 }
@@ -83,6 +87,7 @@ body {
 /* Input area */
 .wa-input {
   display: flex;
+  align-items: center;
   padding: 8px;
   background: #f0f0f0;
 }
@@ -93,12 +98,13 @@ body {
   border-radius: 20px;
   border: none;
   outline: none;
+  font-size: 14px;
 }
 
 .wa-input button {
   margin-left: 8px;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: none;
   background: #25d366;
