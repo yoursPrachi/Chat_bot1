@@ -112,3 +112,9 @@ body {
   font-size: 18px;
   cursor: pointer;
 }
+
+.typing {
+  font-style: italic;
+  color: #555;
+  background: #fff;
+}
