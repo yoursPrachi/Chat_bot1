@@ -97,6 +97,9 @@ function addMessage(message, type) {
   div.innerText = message;
   chatBox.appendChild(div);
   chatBox.scrollTop = chatBox.scrollHeight;
+  if (type === "bot") {
+  speak(message);
+  }
 }
 
 // Typing indicator
