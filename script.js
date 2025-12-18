@@ -150,3 +150,10 @@ recognition.onresult = (event) => {
 recognition.onerror = () => {
   micBtn.innerText = "🎤";
 };
+function speak(text) {
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = "hi-IN";
+  speech.rate = 1;
+  speech.pitch = 1.2;
+  window.speechSynthesis.speak(speech);
+}
