@@ -2,35 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>WhatsApp Chatbot</title>
+  <title>Mira Chat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0b141a">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js");
-}
-</script>
-<div class="wa-app">
-  <div class="wa-header">
-    <div class="avatar">🤖</div>
-    <div class="title">
-      <div class="name">ChatBot</div>
-      <div class="status">online</div>
-    </div>
+
+<div class="chat-container">
+
+  <div class="chat-header">
+    <img id="avatar" class="avatar" src="avatars/mira-default.png">
+    <span id="botName">Mira</span>
   </div>
 
-  <div id="chatBox" class="wa-chat"></div>
+  <div id="chatBox" class="chat-box"></div>
 
   <div class="input-area">
-  <button id="micBtn">🎤</button>
-  <input type="text" id="userInput" placeholder="Type a message..." />
-  <button onclick="sendMessage()">➤</button>
+    <input id="userInput" type="text" placeholder="Message..." />
+    <button onclick="sendMessage()">➤</button>
   </div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
 <script src="script.js"></script>
 </body>
