@@ -2,86 +2,107 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: system-ui, Arial, sans-serif;
 }
 
 body {
-  background: #ece5dd;
+  background: #0b141a;
 }
 
-.app {
-  height: 100vh;
-  width: 100%;
+/* App container */
+.wa-app {
   max-width: 480px;
+  height: 100vh;
   margin: auto;
+  background: #e5ddd5;
   display: flex;
   flex-direction: column;
-  background: #f0f0f0;
 }
 
 /* Header */
-.header {
+.wa-header {
   background: #075e54;
   color: #fff;
-  padding: 15px;
-  text-align: center;
-  font-size: 18px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.title .name {
   font-weight: bold;
+  font-size: 16px;
+}
+
+.title .status {
+  font-size: 12px;
+  opacity: 0.8;
 }
 
 /* Chat area */
-.chat {
+.wa-chat {
   flex: 1;
   padding: 10px;
   overflow-y: auto;
-  background: #ece5dd;
+  background: url("https://i.imgur.com/7Qp7hQp.png");
 }
 
-/* Messages */
+/* Message bubbles */
 .message {
   max-width: 75%;
-  padding: 10px 12px;
+  padding: 8px 10px;
   margin: 6px 0;
-  border-radius: 8px;
   font-size: 14px;
   line-height: 1.4;
+  border-radius: 8px;
+  word-wrap: break-word;
 }
 
 .user {
   background: #dcf8c6;
-  align-self: flex-end;
   margin-left: auto;
+  border-bottom-right-radius: 2px;
 }
 
 .bot {
   background: #fff;
-  align-self: flex-start;
   margin-right: auto;
+  border-bottom-left-radius: 2px;
 }
 
 /* Input area */
-.input-area {
+.wa-input {
   display: flex;
   padding: 8px;
-  background: #fff;
-  border-top: 1px solid #ccc;
+  background: #f0f0f0;
 }
 
-.input-area input {
+.wa-input input {
   flex: 1;
-  padding: 10px;
+  padding: 10px 14px;
   border-radius: 20px;
-  border: 1px solid #ccc;
+  border: none;
   outline: none;
 }
 
-.input-area button {
+.wa-input button {
   margin-left: 8px;
-  padding: 10px 14px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: none;
-  background: #075e54;
+  background: #25d366;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
 }
