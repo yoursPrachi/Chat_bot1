@@ -123,3 +123,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+const micBtn = document.getElementById("micBtn");
+
+const SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+
+const recognition = new SpeechRecognition();
+recognition.lang = "hi-IN";
+recognition.interimResults = false;
+
+micBtn.onclick = () => {
+  recognition.start();
+  micBtn.innerText = "🎙️";
+};
+
+recognition.onresult = (event) => {
+  const voiceText = event.results[0][0].transcript;
+  document.getElementById("userInput").value = voiceText;
+  sendMessage();
+  micBtn.innerText = "🎤";
+};
+
+recognition.onerror = () => {
+  micBtn.innerText = "🎤";
+};
