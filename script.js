@@ -1,3 +1,15 @@
+// Enter key support
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("userInput");
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+});
+
+
 // Greeting on load
 window.onload = () => {
   addMessage("Hello 👋 Kaise madad kar sakta hoon?", "bot");
