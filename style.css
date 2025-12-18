@@ -1,129 +1,80 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
 body {
+  margin: 0;
+  font-family: Arial, sans-serif;
   background: #0b141a;
 }
 
-/* App wrapper */
-.wa-app {
-  max-width: 480px;
+.chat-container {
+  max-width: 420px;
   height: 100vh;
   margin: auto;
   display: flex;
   flex-direction: column;
-  background: #e5ddd5;
+  background: #111b21;
 }
 
-/* Header */
-.wa-header {
-  background: #075e54;
-  color: #fff;
-  padding: 12px;
+.chat-header {
+  background: #202c33;
+  color: white;
+  padding: 10px;
   display: flex;
   align-items: center;
+  gap: 10px;
+  font-weight: bold;
 }
 
 .avatar {
-  width: 36px;
-  height: 36px;
-  background: #25d366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-.title .name {
-  font-weight: 600;
-  font-size: 16px;
-}
-
-.title .status {
-  font-size: 12px;
-  opacity: 0.8;
-}
-
-/* Chat area */
-.wa-chat {
-  flex: 1;
-  padding: 12px;
-  overflow-y: auto;
-  background: linear-gradient(#0b141a, #0b141a);
-}
-
-/* Message bubbles */
-.message {
-  max-width: 80%;
-  padding: 9px 12px;
-  margin: 6px 0;
-  font-size: 14px;
-  line-height: 1.4;
-  border-radius: 8px;
-  word-wrap: break-word;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-}
-
-/* User message */
-.user {
-  background: #dcf8c6;
-  margin-left: auto;
-  border-bottom-right-radius: 2px;
-}
-
-/* Bot message */
-.bot {
-  background: #ffffff;
-  margin-right: auto;
-  border-bottom-left-radius: 2px;
-}
-
-/* Input area */
-.wa-input {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  background: #f0f0f0;
-}
-
-.wa-input input {
-  flex: 1;
-  padding: 10px 14px;
-  border-radius: 20px;
-  border: none;
-  outline: none;
-  font-size: 14px;
-}
-
-.wa-input button {
-  margin-left: 8px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: none;
-  background: #25d366;
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
 }
 
-.typing {
-  font-style: italic;
-  color: #555;
-  background: #fff;
+.chat-box {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
 }
-#micBtn {
-  background: #25d366;
+
+.msg {
+  max-width: 75%;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+.user {
+  background: #005c4b;
+  color: white;
+  align-self: flex-end;
+}
+
+.bot {
+  background: #202c33;
+  color: white;
+  align-self: flex-start;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  background: #202c33;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
   border: none;
+  border-radius: 20px;
+  outline: none;
+}
+
+button {
+  margin-left: 10px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 50%;
+  background: #00a884;
   color: white;
   font-size: 18px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
 }
