@@ -1,7 +1,20 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT",
+  apiKey: "AIzaSyCXxwXHnQop2RuEs-7W1DCQ8-35iGClWik",
+  authDomain: "mira-chatbot-9e51a.firebaseapp.com",
+  projectId: "mira-chatbot-9e51a",
+  storageBucket: "mira-chatbot-9e51a.firebasestorage.app",
+  messagingSenderId: "856415616380",
+  appId: "1:856415616380:web:320ac30e32f711eeb8b8f9"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 };
 
 firebase.initializeApp(firebaseConfig);
