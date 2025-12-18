@@ -2,35 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mira Chat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mira Chatbot</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="chat-container">
-
-  <div class="chat-header">
-    <img id="avatar" class="avatar" src="avatars/mira-default.png">
-    <span id="botName">Mira</span>
+  <div class="chat-container">
+    <div id="chat" class="chat-box"></div>
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Type your message..." />
+      <button id="sendBtn">Send</button>
+    </div>
   </div>
 
-  <div id="chatBox" class="chat-box"></div>
-
-  <div class="input-area">
-  <input
-    id="userInput"
-    type="text"
-    placeholder="Message..."
-    autocomplete="off"
-  />
-  <button id="sendBtn">➤</button>
-  </div>
-</div>
-
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
-<script src="script.js"></script>
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
