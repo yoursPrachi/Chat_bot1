@@ -1,15 +1,3 @@
-// Enter key support
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById("userInput");
-  input.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      sendMessage();
-    }
-  });
-});
-
-
 // Greeting on load
 window.onload = () => {
   addMessage("Hello 👋 Kaise madad kar sakta hoon?", "bot");
@@ -17,29 +5,11 @@ window.onload = () => {
 
 // Smart replies data
 const replies = {
-  hello: [
-    "Hello 👋",
-    "Hi 😊",
-    "Hey! Kaise ho?"
-  ],
-  howareyou: [
-    "Main bilkul theek hoon 😊",
-    "Sab badhiya 👍 aap batao",
-    "Achha feel kar raha hoon 😄"
-  ],
-  name: [
-    "Main aapka smart chatbot hoon 🤖",
-    "Mera naam ChatBot hai 😊"
-  ],
-  help: [
-    "Haan bilkul, bataiye 😊",
-    "Main yahin hoon madad ke liye 👍"
-  ],
-  bye: [
-    "Bye 👋 phir milenge",
-    "Take care 😊",
-    "Milte hain dobara 👋"
-  ]
+  hello: ["Hello 👋", "Hi 😊", "Hey!"],
+  howareyou: ["Main theek hoon 😊", "Sab badhiya 👍", "Achha feel kar raha hoon 😄"],
+  name: ["Main aapka chatbot hoon 🤖", "Mera naam ChatBot hai"],
+  help: ["Haan batao 😊", "Main madad ke liye hoon 👍"],
+  bye: ["Bye 👋", "Phir milenge 😊"]
 };
 
 function sendMessage() {
@@ -50,41 +20,48 @@ function sendMessage() {
   addMessage(text, "user");
   input.value = "";
 
-  let reply = smartReply(text);
+  // Show typing indicator
+  const typingId = showTyping();
+
+  const reply = smartReply(text);
 
   setTimeout(() => {
+    removeTyping(typingId);
     addMessage(reply, "bot");
-  }, 700);
+  }, 1200);
 }
 
 function smartReply(text) {
-  if (text.includes("hello") || text.includes("hi")) {
-    return random(replies.hello);
-  }
-  if (text.includes("how") && text.includes("you")) {
-    return random(replies.howareyou);
-  }
-  if (text.includes("name")) {
-    return random(replies.name);
-  }
-  if (text.includes("help")) {
-    return random(replies.help);
-  }
-  if (text.includes("bye")) {
-    return random(replies.bye);
-  }
+  if (text.includes("hello") || text.includes("hi")) return random(replies.hello);
+  if (text.includes("how") && text.includes("you")) return random(replies.howareyou);
+  if (text.includes("name")) return random(replies.name);
+  if (text.includes("help")) return random(replies.help);
+  if (text.includes("bye")) return random(replies.bye);
 
-  // Default smart reply
-  const defaults = [
-    "Thoda aur clear batao 😊",
+  return random([
+    "Thoda aur explain karo 😊",
     "Samajhne ki koshish kar raha hoon 🤔",
     "Ispe thodi detail chahiye 👍"
-  ];
-  return random(defaults);
+  ]);
 }
 
 function random(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// Typing indicator
+function showTyping() {
+  const chatBox = document.getElementById("chatBox");
+  const div = document.createElement("div");
+  div.className = "message bot typing";
+  div.innerText = "ChatBot is typing…";
+  chatBox.appendChild(div);
+  chatBox.scrollTop = chatBox.scrollHeight;
+  return div;
+}
+
+function removeTyping(el) {
+  el.remove();
 }
 
 function addMessage(message, type) {
@@ -95,3 +72,14 @@ function addMessage(message, type) {
   chatBox.appendChild(div);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+// Enter key support
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("userInput");
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+});
